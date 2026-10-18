@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="_rEo62Tktmz7eY_dls058fd5Rzql4RWBmr_d6zWiMJY" />
   <title>Cibinong River View Residence — Rumah 1 & 2 Lantai Siap Huni</title>
   <meta name="description" content="Cibinong River View Residence menyediakan pilihan rumah 1 dan 2 lantai siap huni dengan lokasi strategis dan fasilitas pendukung di Cibinong.">
   <meta name="theme-color" content="#28563a">
@@ -134,17 +135,21 @@
     .detail-item span { display:block; color:var(--muted); font-size:.72rem; }
     .detail-item strong { display:block; color:var(--brown-dark); font-size:.9rem; margin-top:2px; }
 
-    /* Gallery: satu foto landscape di kiri, empat foto portrait 4:5 di kanan */
+    /* Gallery */
     .gallery { background:#f5f6f3; }
-    .gallery-layout { display:grid; grid-template-columns:1.65fr 1fr; gap:12px; align-items:stretch; }
-    .gallery-side { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(2,minmax(0,1fr)); align-content:stretch; align-items:stretch; gap:12px; min-width:0; min-height:0; }
-    .gallery-card { display:block; width:100%; aspect-ratio:4/5; border:0; padding:0; border-radius:12px; overflow:hidden; position:relative; cursor:pointer; background:#dfeae1; box-shadow:var(--shadow-sm); min-width:0; }
-    .gallery-feature { aspect-ratio:4/3; height:auto; min-height:0; align-self:stretch; }
+    .gallery-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; align-items:stretch; }
+    .gallery-card { display:block; width:100%; aspect-ratio:1/1; border:0; padding:0; border-radius:12px; overflow:hidden; position:relative; cursor:pointer; background:#dfeae1; box-shadow:var(--shadow-sm); min-width:0; }
+    .gallery-feature { aspect-ratio:4/5; height:auto; min-height:0; align-self:center; flex:none; }
     .gallery-card img { display:block; width:100%; height:100%; object-fit:cover; transition:.5s var(--ease); }
     .gallery-card:hover img { transform:scale(1.06); }
+    .gallery-carousel { min-width:0; overflow:hidden; }
+    .gallery-track { display:grid; grid-auto-flow:column; grid-template-rows:repeat(2, minmax(0, 1fr)); grid-auto-columns:calc((100% - 12px) / 2); gap:12px; transform:translateX(0); transition:transform .4s ease; touch-action:pan-y; }
+    .gallery-controls { display:flex; justify-content:flex-end; gap:8px; margin-top:12px; }
+    .gallery-arrow { width:38px; height:38px; border:1px solid var(--line); border-radius:50%; background:#fff; color:var(--green-dark); cursor:pointer; box-shadow:var(--shadow-sm); }
+    .gallery-arrow:hover { background:var(--green-dark); color:#fff; }
     .gallery-note { text-align:center; color:var(--muted); font-size:.7rem; margin-top:13px; }
 
-    /* Siteplan: gambar landscape ditampilkan utuh tanpa terpotong */
+    /* Siteplan */
     .siteplan { background:#fff; }
     .siteplan-frame { width:min(100%,1050px); margin:0 auto; aspect-ratio:16/9; min-height:220px; max-height:75vh; padding:12px; display:grid; place-items:center; overflow:hidden; border:1px solid var(--line); border-radius:18px; background:#f5f6f3; box-shadow:var(--shadow-sm); }
     .siteplan-image { display:block; width:100%; height:100%; min-height:0; padding:0; border:0; background:transparent; cursor:zoom-in; }
@@ -296,11 +301,12 @@
       .detail-item { padding:11px; }
       .detail-item span { font-size:.65rem; }
       .detail-item strong { font-size:.8rem; }
-      .gallery-layout { grid-template-columns:1fr; gap:8px; }
-      .gallery-side { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:auto; gap:8px; }
+      .gallery-layout { grid-template-columns:minmax(0,1fr); gap:14px; }
+      .gallery-feature { width:100%; aspect-ratio:4/5; justify-self:stretch; border-radius:10px; }
       .gallery-card { border-radius:10px; }
-      .gallery-feature { aspect-ratio:16/10; height:auto; min-height:0; }
-      .gallery-side .gallery-card { aspect-ratio:4/5; }
+      .gallery-track { grid-auto-columns:calc((100% - 8px) / 2); gap:8px; }
+      .gallery-controls { margin-top:9px; }
+      .gallery-arrow { width:34px; height:34px; }
       .gallery-note { font-size:.58rem; margin-top:9px; }
       .location-grid { gap:12px; }
       .location-list { gap:7px; }
@@ -344,7 +350,43 @@
     @media(prefers-reduced-motion:reduce) {
       *,*:before,*:after { scroll-behavior:auto!important; transition:none!important; animation:none!important; }
     }
-  </style>
+
+/* Gallery alignment fix (lama) */
+.gallery-layout { display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:stretch; }
+.gallery-feature, .gallery-feature button, .gallery-feature img { height:100%; min-height:0; }
+.gallery-feature img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
+.gallery-track { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(2,minmax(0,1fr)); gap:12px; height:100%; }
+.gallery-card { width:100%; aspect-ratio:1/1; flex:none; min-width:0; }
+@media (max-width: 768px) {
+  .gallery-layout { grid-template-columns:1fr; }
+  .gallery-feature, .gallery-feature button, .gallery-feature img { height:auto; }
+  .gallery-feature img { aspect-ratio:4/5; }
+  .gallery-track { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(2,minmax(0,1fr)); height:auto; }
+  .gallery-card { aspect-ratio:1/1; }
+}
+
+/* ===== GALERI BARU: 1 foto 4:5 kiri + carousel 2x2 foto 1:1 kanan ===== */
+.gal-layout { display:grid; grid-template-columns:1fr 1.25fr; gap:16px; align-items:start; }
+.gal-item { display:block; width:100%; border:0; padding:0; border-radius:12px; overflow:hidden; cursor:pointer; background:#dfeae1; box-shadow:var(--shadow-sm); position:relative; }
+.gal-item img { width:100%; height:100%; object-fit:cover; transition:.5s var(--ease); }
+.gal-item:hover img { transform:scale(1.06); }
+.gal-main { aspect-ratio:4/5; }
+.gal-carousel { position:relative; min-width:0; }
+.gal-viewport { overflow:hidden; border-radius:12px; aspect-ratio:1/1; }
+.gal-track { display:flex; height:100%; transition:transform .5s var(--ease); }
+.gal-page { flex:0 0 100%; height:100%; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(2,minmax(0,1fr)); gap:12px; }
+.gal-page .gal-item { height:100%; }
+.gal-arrow { position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px; border:0; border-radius:50%; background:rgba(255,255,255,.95); color:var(--green-dark); cursor:pointer; box-shadow:var(--shadow-md); z-index:3; transition:.25s; }
+.gal-arrow:hover { background:var(--green-dark); color:#fff; }
+.gal-prev { left:10px; }
+.gal-next { right:10px; }
+@media (max-width:768px) {
+  .gal-layout { grid-template-columns:1fr; gap:14px; }
+  .gal-page { gap:8px; }
+  .gal-arrow { width:34px; height:34px; }
+}
+
+</style>
 </head>
 
 <body>
@@ -459,18 +501,28 @@
     <section class="gallery" id="galeri">
       <div class="container">
         <div class="section-head reveal"><span class="tag">Visual Hunian</span><h2>Galeri Rumah</h2><p>Tap foto untuk melihat gambar lebih jelas.</p><div class="divider"></div></div>
-        <div class="gallery-layout">
-          <button class="gallery-card gallery-feature reveal" data-img="rumah1.jpg" data-title="Tampilan rumah modern">
-            <img src="rumah1.jpg" alt="Tampilan rumah modern" loading="lazy">
+        <div class="gal-layout">
+          <button class="gal-item gal-main reveal" data-img="pstr3.jpeg" data-title="Tampilan Rumah Modern">
+            <img src="pstr3.jpeg" alt="Tampilan rumah modern" loading="lazy">
           </button>
-          <div class="gallery-side">
-            <button class="gallery-card reveal" data-img="tangga1.jpg" data-title="Interior hunian"><img src="tangga1.jpg" alt="Interior tangga" loading="lazy"></button>
-            <button class="gallery-card reveal" data-img="ruangtamu1.jpg" data-title="Ruang tamu"><img src="ruangtamu1.jpg" alt="Ruang tamu" loading="lazy"></button>
-            <button class="gallery-card reveal" data-img="kmrmndi.jpg" data-title="Kamar mandi"><img src="kmrmndi.jpg" alt="Kamar mandi" loading="lazy"></button>
-            <button class="gallery-card reveal" data-img="hlmnblkg.jpg" data-title="Halaman belakang"><img src="hlmnblkg.jpg" alt="Halaman belakang" loading="lazy"></button>
+          <div class="gal-carousel reveal" aria-label="Carousel 12 foto galeri rumah">
+            <div class="gal-viewport">
+              <div class="gal-track" id="galleryTrack">
+                <button class="gal-item" data-img="lyt.jpeg" data-title="Layout Rumah"><img src="lyt.jpeg" alt="Layout Rumah" loading="lazy"></button>
+                <button class="gal-item" data-img="rk2.jpeg" data-title="Ruang Keluarga"><img src="rk2.jpeg" alt="Ruang Keluarga" loading="lazy"></button>
+                <button class="gal-item" data-img="ktu.jpeg" data-title="Kamar Tidur Utama"><img src="ktu.jpeg" alt="Kamar Tidur Utama" loading="lazy"></button>
+                <button class="gal-item" data-img="kt1.jpeg" data-title="Kamar Tidur 1"><img src="kt1.jpeg" alt="Kamar Tidur 1" loading="lazy"></button>
+                <button class="gal-item" data-img="void.jpeg" data-title="Void & Sudut Tangga"><img src="void.jpeg" alt="Void & Sudut Tangga" loading="lazy"></button>
+                <button class="gal-item" data-img="at1.jpeg" data-title="Area Tangga"><img src="at1.jpeg" alt="Area Tangga" loading="lazy"></button>
+                <button class="gal-item" data-img="rk.jpeg" data-title="Area Keluarga"><img src="rk.jpeg" alt="Area Keluarga" loading="lazy"></button>
+                <button class="gal-item" data-img="km.jpeg" data-title="Kamar Mandi"><img src="km.jpeg" alt="Kamar Mandi" loading="lazy"></button>
+              </div>
+            </div>
+            <button class="gal-arrow gal-prev" id="galleryPrev" type="button" aria-label="Foto sebelumnya"><i class="fas fa-chevron-left"></i></button>
+            <button class="gal-arrow gal-next" id="galleryNext" type="button" aria-label="Foto berikutnya"><i class="fas fa-chevron-right"></i></button>
           </div>
         </div>
-        <p class="gallery-note">Klik foto untuk melihat detail.</p>
+        <p class="gallery-note">Klik foto untuk memperbesar, gunakan panah untuk menggeser galeri.</p>
       </div>
     </section>
 
@@ -687,7 +739,56 @@
       setTimeout(() => { modalImage.src = ''; }, 250);
     }
 
-    document.querySelectorAll('.gallery-card').forEach(card => {
+    const galleryTrack = document.getElementById('galleryTrack');
+    const galleryPrev = document.getElementById('galleryPrev');
+    const galleryNext = document.getElementById('galleryNext');
+
+    // Bagi 12 foto jadi halaman berisi 4 foto (kotak 2x2)
+    const galleryItems = Array.from(galleryTrack.children);
+    galleryTrack.innerHTML = '';
+    const galleryPages = [];
+    for (let i = 0; i < galleryItems.length; i += 4) {
+      const page = document.createElement('div');
+      page.className = 'gal-page';
+      galleryItems.slice(i, i + 4).forEach(item => page.appendChild(item));
+      galleryTrack.appendChild(page);
+      galleryPages.push(page);
+    }
+
+    // Klon halaman pertama & terakhir supaya geser tidak ada ujungnya (infinity)
+    galleryTrack.appendChild(galleryPages[0].cloneNode(true));
+    galleryTrack.insertBefore(galleryPages[galleryPages.length - 1].cloneNode(true), galleryTrack.firstChild);
+
+    let galleryIndex = 1;
+    let galleryBusy = false;
+    const galleryTotal = galleryPages.length;
+
+    function setGalleryPos(animate) {
+      galleryTrack.style.transition = animate ? '' : 'none';
+      galleryTrack.style.transform = `translateX(${-galleryIndex * 100}%)`;
+      if (!animate) { void galleryTrack.offsetWidth; galleryTrack.style.transition = ''; }
+    }
+    setGalleryPos(false);
+
+    function moveGallery(direction) {
+      if (galleryBusy) return;
+      galleryBusy = true;
+      galleryIndex += direction;
+      setGalleryPos(true);
+    }
+
+    galleryTrack.addEventListener('transitionend', event => {
+      if (event.target !== galleryTrack) return;
+      if (galleryIndex === 0) { galleryIndex = galleryTotal; setGalleryPos(false); }
+      else if (galleryIndex === galleryTotal + 1) { galleryIndex = 1; setGalleryPos(false); }
+      galleryBusy = false;
+    });
+
+    galleryPrev.addEventListener('click', () => moveGallery(-1));
+    galleryNext.addEventListener('click', () => moveGallery(1));
+
+    // Klik foto -> buka modal (termasuk foto utama 4:5 dan foto klon)
+    document.querySelectorAll('.gal-item').forEach(card => {
       card.addEventListener('click', () => openGallery(card.dataset.img, card.dataset.title));
     });
     document.querySelectorAll('.siteplan-image').forEach(card => {
