@@ -428,6 +428,38 @@
   .gal-arrow { width:34px; height:34px; }
 }
 
+
+    /* Social media: menempel di tengah bawah tiap section (tidak melayang, ikut tergulung) */
+    .hero,.siteplan,.specs,.gallery,.location,.facilities,.kpr { position:relative; }
+    .social-float {
+      position:absolute; z-index:2;
+      left:50%; transform:translateX(-50%); bottom:22px;
+      display:flex; flex-direction:row; gap:8px;
+    }
+    .social-float a {
+      width:34px; height:34px; display:grid; place-items:center;
+      border-radius:50%; color:var(--green-dark); background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+      font-size:.95rem; transition:transform .25s ease, background .25s ease, color .25s ease;
+    }
+    .social-float a:hover,
+    .social-float a:focus-visible {
+      background:var(--green-dark); color:#fff; transform:translateY(-2px);
+      outline:2px solid var(--green); outline-offset:2px;
+    }
+    /* ruang bawah supaya ikon tidak menimpa konten */
+    .siteplan,.specs,.gallery,.location,.facilities,.kpr { padding-bottom:90px; }
+    .hero { padding-bottom:110px; }
+    .hero .social-float { bottom:42px; }
+    @media(max-width:600px) {
+      .social-float { bottom:16px; gap:7px; }
+      .social-float a { width:30px; height:30px; font-size:.82rem; }
+      .siteplan,.specs,.gallery,.location,.facilities,.kpr { padding-bottom:68px; }
+      .hero { padding-bottom:90px; }
+      .hero .social-float { bottom:34px; }
+    }
+
 </style>
 </head>
 
@@ -487,6 +519,13 @@
           </div>
         </div>
       </div>
+      <!-- Media sosial: menempel di kiri bawah hero, ikut tergulung bersama halaman -->
+        <nav class="social-float" aria-label="Media sosial Cibinong River View Residence">
+          <a href="https://www.tiktok.com/@cibinong.river.view" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi TikTok Cibinong River View" title="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/crv.residence/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Instagram Cibinong River View" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=61595401610447" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Facebook Cibinong River View" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@cibinongrivervieww" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi YouTube Cibinong River View" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </nav>
     </section>
 
     <section class="siteplan" id="siteplan">
@@ -504,6 +543,13 @@
         </div>
         <p class="siteplan-note">Klik gambar untuk melihat siteplan secara penuh.</p>
       </div>
+      <!-- Media sosial: menempel di kiri bawah section ini, ikut tergulung bersama halaman -->
+        <nav class="social-float" aria-label="Media sosial Cibinong River View Residence">
+          <a href="https://www.tiktok.com/@cibinong.river.view" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi TikTok Cibinong River View" title="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/crv.residence/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Instagram Cibinong River View" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=61595401610447" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Facebook Cibinong River View" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@cibinongrivervieww" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi YouTube Cibinong River View" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </nav>
     </section>
 
     <section class="specs" id="spesifikasi">
@@ -538,6 +584,13 @@
           </div>
         </div>
       </div>
+      <!-- Media sosial: menempel di kiri bawah section ini, ikut tergulung bersama halaman -->
+        <nav class="social-float" aria-label="Media sosial Cibinong River View Residence">
+          <a href="https://www.tiktok.com/@cibinong.river.view" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi TikTok Cibinong River View" title="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/crv.residence/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Instagram Cibinong River View" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=61595401610447" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Facebook Cibinong River View" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@cibinongrivervieww" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi YouTube Cibinong River View" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </nav>
     </section>
 
     <section class="gallery" id="galeri">
@@ -566,6 +619,13 @@
         </div>
         <p class="gallery-note">Klik foto untuk memperbesar, gunakan panah untuk menggeser galeri.</p>
       </div>
+      <!-- Media sosial: menempel di kiri bawah section ini, ikut tergulung bersama halaman -->
+        <nav class="social-float" aria-label="Media sosial Cibinong River View Residence">
+          <a href="https://www.tiktok.com/@cibinong.river.view" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi TikTok Cibinong River View" title="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/crv.residence/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Instagram Cibinong River View" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=61595401610447" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Facebook Cibinong River View" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@cibinongrivervieww" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi YouTube Cibinong River View" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </nav>
     </section>
 
     <section class="location" id="lokasi">
@@ -583,6 +643,13 @@
           <div class="map-wrap reveal"><iframe src="https://www.google.com/maps?q=Puspasari%2C%20Cibinong%2C%20Bogor&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Peta lokasi Cibinong River View"></iframe></div>
         </div>
       </div>
+      <!-- Media sosial: menempel di kiri bawah section ini, ikut tergulung bersama halaman -->
+        <nav class="social-float" aria-label="Media sosial Cibinong River View Residence">
+          <a href="https://www.tiktok.com/@cibinong.river.view" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi TikTok Cibinong River View" title="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/crv.residence/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Instagram Cibinong River View" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=61595401610447" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Facebook Cibinong River View" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@cibinongrivervieww" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi YouTube Cibinong River View" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </nav>
     </section>
 
     <section class="facilities" id="fasilitas">
@@ -600,6 +667,13 @@
           <article class="facility-card reveal"><span class="facility-icon"><i class="fas fa-file-contract"></i></span><h4>Legalitas Aman</h4><p>Dokumen legalitas terpercaya</p></article>
         </div>
       </div>
+      <!-- Media sosial: menempel di kiri bawah section ini, ikut tergulung bersama halaman -->
+        <nav class="social-float" aria-label="Media sosial Cibinong River View Residence">
+          <a href="https://www.tiktok.com/@cibinong.river.view" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi TikTok Cibinong River View" title="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/crv.residence/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Instagram Cibinong River View" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=61595401610447" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Facebook Cibinong River View" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@cibinongrivervieww" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi YouTube Cibinong River View" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </nav>
     </section>
 
     <section class="kpr" id="kpr">
@@ -610,6 +684,13 @@
           <article class="kpr-card reveal"><i class="fas fa-calendar-check"></i><h3>Angsuran</h3><strong>Mulai Rp 5 JUTAAN</strong><p>Per bulan</p></article>
         </div>
       </div>
+      <!-- Media sosial: menempel di kiri bawah section ini, ikut tergulung bersama halaman -->
+        <nav class="social-float" aria-label="Media sosial Cibinong River View Residence">
+          <a href="https://www.tiktok.com/@cibinong.river.view" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi TikTok Cibinong River View" title="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/crv.residence/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Instagram Cibinong River View" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=61595401610447" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Facebook Cibinong River View" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@cibinongrivervieww" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi YouTube Cibinong River View" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </nav>
     </section>
 
     <section class="cta" id="kontak">
@@ -647,6 +728,7 @@
       <div class="footer-bottom">© <span id="year"></span> Cibinong River View Residence. All rights reserved.</div>
     </div>
   </footer>
+
 
   <a class="wa-float" href="https://wa.me/6287761426677" target="_blank" rel="noopener" aria-label="Chat WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas"><i class="fas fa-arrow-up"></i></button>
